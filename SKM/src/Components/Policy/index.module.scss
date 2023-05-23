@@ -1,0 +1,22 @@
+.policyContent {
+  @apply flex flex-col max-h-[60vh] h-[60vh] overflow-auto items-center flex-grow p-4 w-full rounded-[1rem] bg-white;
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .link {
+    @apply inline text-[#37a1df] break-all underline;
+  }
+
+  ul {
+    all: revert;
+    @apply m-0 p-0;
+    padding-inline-start: 20px;
+
+    li {
+      @apply mb-[0.3rem] text-[0.9rem] leading-[1.3];
+    }
+  }
+}
