@@ -12,6 +12,7 @@
   "dependencies": {
     "@appier/botbonnie-ui": "^0.0.1-testing",
     "@types/lodash": "^4.14.191",
+    "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "daisyui": "^2.51.6",
     "jotai": "^2.1.0",

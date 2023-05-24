@@ -1,28 +1,52 @@
 import { useCallback, useState } from "react";
 import Page from "../Page";
 import Input from "./Input";
+import { sendOtp, verifyOtp } from "~/api/otp";
+
+import styles from "./index.module.scss";
+import useResendTimer from "~/hooks/useResendTimer";
 
 const ERROR = {
-  FORMAT: "請輸入正確手機號碼格式",
+  FORMAT: "尚未輸入",
 };
+interface Props {
+  phoneNumber: string;
+}
 
-const Verification: React.FC = () => {
-  const [phoneNumber, setPhoneNumber] = useState("");
+const Verification: React.FC<Props> = ({ phoneNumber }) => {
+  const [otpCode, setOtpCode] = useState("");
   const [inputError, setInputError] = useState("");
 
-  const checkPhoneValid = (val: string) => {
-    if (val.length === 10 && val.startsWith("09")) return true;
-    return false;
-  };
+  const timer = useResendTimer({
+    defaultTime: 60,
+    autoStart: true,
+  });
 
   const handleSubmit = useCallback(() => {
-    const preprocessNumber = phoneNumber.padStart(10, "0");
-    const valid = checkPhoneValid(preprocessNumber);
-    if (!valid) setInputError(ERROR.FORMAT);
-    else {
-      setInputError("");
+    if (!otpCode) {
+      setInputError(ERROR.FORMAT);
+    } else {
+      verifyOtp({
+        mobilePhone: phoneNumber,
+        otpCode,
+      })
+        .then((res) => {
+          const { url } = res;
+          if (url) window.location.replace(url);
+        })
+        .catch((resp) => {
+          const { message = "" } = resp?.response?.data?.error || {};
+          if (message) window.alert(message);
+        });
     }
-  }, [phoneNumber]);
+  }, [otpCode]);
+
+  const resendOtp = useCallback(() => {
+    sendOtp({
+      mobilePhone: phoneNumber,
+    });
+    timer.activate();
+  }, [timer.activate, phoneNumber]);
 
   return (
     <Page type="secondary">
@@ -30,15 +54,21 @@ const Verification: React.FC = () => {
         <h4 className="w-full text-center mt-6 mb-[1.3rem]">開通驗證碼</h4>
         <Input
           placeholder="請輸入簡訊開通碼"
-          value={phoneNumber}
-          onChange={setPhoneNumber}
-          type="sms"
+          value={otpCode}
+          onChange={setOtpCode}
+          type="otp"
         />
         <div className="flex h-10 w-full items-center justify-center">
-          {inputError && (
-            <div className="text-sm text-error">請輸入正確手機號碼格式</div>
-          )}
+          {inputError && <div className="text-sm text-error">{inputError}</div>}
         </div>
+        {timer.active ? (
+          <p className="mx-auto">{timer.time} 秒後可重新發送開通碼</p>
+        ) : (
+          <button className={`${styles.resendBtn} mx-auto`} onClick={resendOtp}>
+            重新發送開通碼
+          </button>
+        )}
+
         <div className="px-6 mt-8">
           <button className="btn btn-primary btn-sm" onClick={handleSubmit}>
             確認送出

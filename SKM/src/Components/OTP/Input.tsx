@@ -6,21 +6,21 @@ type Props = {
   placeholder?: string;
   value: string;
   onChange: (val: string) => void;
-  type: "phone" | "sms";
+  type: "phone" | "otp";
 };
 
 const TYPE_ICON = {
   phone: PhoneIcon,
-  sms: SMSIcon,
+  otp: SMSIcon,
 };
 const TYPE_LABEL = {
   phone: "請輸入手機號碼",
-  sms: "簡訊開通碼",
+  otp: "簡訊開通碼",
 };
 
 const TYPE_MAX_INPUT = {
   phone: 10,
-  sms: 6,
+  otp: 4,
 };
 const Input: React.FC<Props> = ({
   placeholder = "",
