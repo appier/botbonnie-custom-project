@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+}
+
+.barContainer {
+  display: flex;
+  width: 100%;
+
+  .left {
+    margin-left: 20px;
+    margin-right: -27px;
+    width: 42px;
+    height: 38px;
+  }
+
+  .right {
+    margin-right: 20px;
+    margin-left: -27px;
+    width: 42px;
+    height: 38px;
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 52px;
+    background-size: 100% 52px;
+    background-repeat: no-repeat;
+    z-index: 2;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.recordContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: -14px;
+  z-index: 1;
+}

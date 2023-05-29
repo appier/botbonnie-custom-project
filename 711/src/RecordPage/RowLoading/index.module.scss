@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .divider {
+    background-color: #eeeeee;
+    width: 100%;
+    height: 1px;
+  }
+}

@@ -1,0 +1,1126 @@
+﻿@charset "utf-8";
+/* $Reset
+--------------------------------------------------------------------------------------*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var {
+  font-style: normal;
+  font-weight: 400;
+}
+ol,
+ul {
+  list-style: none;
+}
+q:before,
+q:after {
+  content: "";
+}
+abbr,
+acronym {
+  border: 0;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  line-height: 1em;
+  display: inline-block;
+}
+a:active {
+  outline: 0;
+}
+input,
+textarea,
+button,
+select,
+option {
+  border: 0;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  font-size: 1.6rem;
+  font-family: "Noto Sans TC", "Open Sans", "Arial", "Microsoft JhengHei",
+    "Apple LiGothic Medium", sans-serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+select::-ms-expand {
+  display: none;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #ccc;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #ccc;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+/* $font
+--------------------------------------------------------------------------------------*/
+/* @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css); */
+
+/* cwTeXYen (Chinese Traditional) http://www.google.com/fonts/earlyaccess */
+@font-face {
+  font-family: "cwTeXHei";
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+  src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix)
+      format("embedded-opentype"),
+    url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format("woff"),
+    url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf)
+      format("truetype");
+}
+
+/* @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css); */
+/*
+* Noto Sans TC (Chinese_traditional) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 100;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff)
+      format("woff"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff)
+      format("woff"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff)
+      format("woff"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff)
+      format("woff"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff)
+      format("woff"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf)
+      format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff)
+      format("woff"),
+    url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf)
+      format("opentype");
+}
+
+:before,
+:after {
+  font-family: "Font Awesome 5 Free", "Linearicons-Free", "微軟正黑體";
+}
+
+/* $body,html
+--------------------------------------------------------------------------------------*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  -webkit-text-size-adjust: none;
+  font-family: "微軟正黑體", "新細明體", "蘋果儷黑體", Arial, Helvetica,
+    sans-serif;
+  background: url("~/assets/images/bg.png") #fff;
+  background-size: cover;
+  color: #6c341b;
+  background-repeat: no-repeat;
+}
+* {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+
+/* $共用
+--------------------------------------------------------------------------------------*/
+/* IMAGE REPLACE */
+.imageReplace {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* float */
+.floatL {
+  float: left;
+}
+.floatR {
+  float: right;
+}
+
+/* reset */
+button {
+  font-family: "微軟正黑體", "新細明體", "蘋果儷黑體", Arial, Helvetica,
+    sans-serif;
+  border: none;
+}
+input {
+  font-family: "微軟正黑體", "新細明體", "蘋果儷黑體", Arial, Helvetica,
+    sans-serif;
+  border: none;
+}
+select {
+  font-family: "微軟正黑體", "新細明體", "蘋果儷黑體", Arial, Helvetica,
+    sans-serif;
+}
+
+/* loading */
+.loading {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-circle circle {
+  -webkit-animation: c1_2 9s linear infinite, c1_3 4.5s infinite;
+  -moz-animation: c1_2 9s linear infinite, c1_3 4.5s infinite;
+  animation: c1_2 9s linear infinite, c1_3 4.5s infinite;
+}
+.loading.fade {
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+/*loading 控制粗細*/
+@-webkit-keyframes c1_2 {
+  0% {
+    stroke-width: 0;
+  }
+  10% {
+    stroke-width: 8;
+  }
+  75% {
+    stroke-width: 8;
+  }
+  90% {
+    stroke-width: 0;
+  }
+  100% {
+    stroke-width: 0;
+  }
+}
+/*loading 動態*/
+@-webkit-keyframes c1_3 {
+  0% {
+    stroke-dasharray: 104, 156;
+    stroke-dashoffset: -52;
+  }
+  16% {
+    stroke-dasharray: 1, 156;
+    stroke-dashoffset: -52;
+  }
+  16.01% {
+    stroke-dasharray: 1, 156;
+    stroke-dashoffset: -208;
+  }
+  33% {
+    stroke-dasharray: 104, 52;
+    stroke-dashoffset: -104;
+  }
+  33.01% {
+    stroke-dasharray: 104, 52;
+    stroke-dashoffset: -104;
+  }
+  49% {
+    stroke-dasharray: 1, 156;
+    stroke-dashoffset: -104;
+  }
+  49.01% {
+    stroke-dasharray: 1, 156;
+    stroke-dashoffset: 52;
+  }
+  66% {
+    stroke-dasharray: 104, 52;
+    stroke-dashoffset: 156;
+  }
+  66.01% {
+    stroke-dasharray: 104, 52;
+    stroke-dashoffset: 156;
+  }
+  82% {
+    stroke-dasharray: 1, 156;
+    stroke-dashoffset: 156;
+  }
+  82.01% {
+    stroke-dasharray: 1, 156;
+    stroke-dashoffset: 156;
+  }
+  99.99% {
+    stroke-dasharray: 104, 52;
+    stroke-dashoffset: 256;
+  }
+}
+/* end loading */
+
+.wrap {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.container {
+  padding: 0px;
+}
+.container.inner-page {
+  padding: 20px 10px 190px 10px;
+}
+
+.box {
+  padding-bottom: 1em;
+}
+.box a {
+  color: #0028f0;
+  text-decoration: underline;
+}
+
+.center_block {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* coming soon */
+.soon {
+  border: 3px solid #ff84ee;
+  padding: 0.4em;
+  font-size: 2.4em;
+  margin-bottom: 0.2em;
+}
+
+/* font */
+h2 {
+  width: max-content;
+  margin: 0 auto 10px auto;
+  color: #e60045;
+  font-size: 24px;
+  font-weight: bold;
+  background: #fff;
+  padding: 3px 20px;
+  border-radius: 50px;
+}
+p {
+  color: #014178;
+  text-align: center;
+  margin-bottom: 0.4em;
+  line-height: 1.4em;
+}
+p span {
+  color: #fc4515;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+p span.note {
+  color: #ff8736;
+  font-size: 16px;
+  font-weight: bold;
+}
+p.notice {
+  color: #919191;
+  font-size: 14px;
+}
+
+/* menu */
+.navToggle {
+  z-index: 9;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+}
+.navToggle .icon {
+  -webkit-transition: all 0.4s ease-out;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 30px;
+  height: 2px;
+  background-color: #ffde00;
+}
+.navToggle .icon:before,
+.navToggle .icon:after {
+  -webkit-transition: all 0.25s ease-out;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #ffde00;
+  content: "";
+}
+.navToggle .icon:before {
+  top: -10px;
+  left: 0;
+}
+.navToggle .icon:after {
+  top: 10px;
+  left: 0;
+}
+.navToggle:hover .icon {
+  background-color: #ffde00;
+}
+.navToggle:hover .icon:before {
+  top: -10px;
+  background-color: #ffde00;
+}
+.navToggle:hover .icon:after {
+  top: 10px;
+  background-color: #ffde00;
+}
+.navToggle.open .icon {
+  -webkit-transition: all 0.4s ease-out;
+  background-color: transparent;
+  -webkit-transform: rotate(180deg);
+}
+.navToggle.open .icon:before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+}
+.navToggle.open .icon:after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+}
+
+#menu {
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.5s;
+  -webkit-transition: all f0.5s;
+  background-color: #fff;
+  top: 0;
+}
+.container #menu {
+  z-index: 2;
+}
+#menu ul {
+  list-style: none;
+  padding: 0;
+  text-transform: uppercase;
+  margin-top: 4em;
+}
+#menu ul li a {
+  color: #e60045;
+  font-size: 20px;
+  font-weight: bold;
+}
+#menu li:first-child {
+  margin-top: 0;
+}
+#menu li {
+  margin: 0 32px;
+  padding: 16px 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-decoration: none;
+  -webkit-transition: all 0.25s;
+  border-bottom: 2px dotted #ffc844;
+}
+#menu li:hover {
+  text-decoration: underline;
+}
+#menu li:last-child {
+  border-bottom: none;
+}
+#menu.active {
+  height: 100vh;
+}
+/* end menu */
+
+.gotop {
+  width: 45px;
+  height: 45px;
+  background: #e60045;
+  border-radius: 10px 0 0 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  bottom: 70px;
+  z-index: 1000;
+  display: none;
+}
+
+/* kv */
+.title-idx {
+  width: 100%;
+  padding-top: 32%;
+  background-image: url("~/assets/images/title-idx.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  animation: bounce-in 1s ease forwards;
+  opacity: 0;
+  position: relative;
+}
+.title-idx .title-pic1,
+.title-idx .title-pic2 {
+  width: 25%;
+  position: absolute;
+  bottom: 20px;
+  transform-origin: bottom;
+}
+.title-idx .title-pic1 {
+  left: 0;
+  animation: rotate-L 1.5s ease infinite;
+}
+.title-idx .title-pic2 {
+  right: 0;
+  animation: rotate-R 1.5s ease infinite;
+}
+.title-page {
+  padding-top: 33%;
+  margin: 0em auto 5px auto;
+  background-image: url("~/assets/images/title-page.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  animation: bounce-in 1s ease forwards;
+  opacity: 0;
+}
+.title-page .title-pic1,
+.title-page .title-pic2 {
+  width: 16%;
+  position: absolute;
+  bottom: 10px;
+  transform-origin: bottom;
+}
+.title-page .title-pic1 {
+  left: 8%;
+  animation: rotate-L 1.5s ease infinite;
+}
+.title-page .title-pic2 {
+  right: 8%;
+  animation: rotate-R 1.5s ease infinite;
+}
+.title-idol {
+  width: 100%;
+  animation: bounce-in 1s 0.2s ease forwards;
+  opacity: 0;
+  position: absolute;
+  top: 35%;
+}
+.title-pic1,
+.title-pic2 {
+  width: 25%;
+  position: absolute;
+  bottom: 20px;
+  transform-origin: bottom;
+}
+.title-pic1 {
+  left: 0;
+  animation: rotate-L 1.5s ease infinite;
+}
+.title-pic2 {
+  right: 0;
+  animation: rotate-R 1.5s ease infinite;
+}
+.title-pic1,
+.title-pic2 {
+  width: 28%;
+  position: absolute;
+  bottom: 73%;
+  transform-origin: bottom;
+}
+.title-pic1 {
+  left: 8%;
+  animation: rotate-L 1.5s ease infinite;
+}
+.title-pic2 {
+  right: 2%;
+  animation: rotate-R 1.5s ease infinite;
+}
+
+/* 按鈕 */
+.btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.btn {
+  height: 60px;
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+.btn.btn-animat {
+  animation: bounce-in 1s 0.4s ease forwards,
+    breath 1s infinite ease-in-out alternate;
+  opacity: 0;
+}
+.btn.btn-style1 {
+  color: #fff;
+  background: #e96467;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px 0px #999999;
+}
+.btn.btn-style1 span {
+  color: #e60045;
+}
+.btn.btn-style1 .note {
+  color: #fff67c;
+  font-size: 12px;
+  font-weight: thin;
+  line-height: 1.1;
+}
+.btn.btn-style2 {
+  color: #000;
+  background: #ffcb79;
+  flex-direction: column;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  box-shadow: 1px 1px 5px 0px #999999;
+}
+
+/*---------*\
+    index
+\*---------*/
+.mission-pic {
+  animation: bounce-in 1s 0.2s ease forwards;
+  opacity: 0;
+  margin: -5px 0 -10px 0;
+}
+.idx_info {
+  width: 100%;
+  text-align: center;
+  background: url("~/assets/images/idxbg.png");
+  background-size: cover;
+  margin-top: 2%;
+  z-index: 99;
+  padding: 8%;
+  position: fixed;
+  bottom: 0;
+}
+.idx-text_box {
+  font-size: 18px;
+  padding-top: 3%;
+}
+.logos {
+  width: 94%;
+  margin: 0 auto 15px;
+}
+.copyright {
+  width: 80px;
+  margin: 15px auto;
+}
+
+/* 
+翻牌頁面 
+*/
+.game-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.game-note img {
+  width: 66px;
+}
+.game_ani {
+  width: 100%;
+}
+.game_ani img {
+  width: 100%;
+}
+.gamecard {
+  width: 82%;
+  margin: 0 auto;
+  animation: bounce-in 1s 0.2s ease forwards;
+}
+.gamecard ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.gamecard ul li {
+  width: 48%;
+}
+.gamecard ul li img {
+  border-radius: 15px;
+}
+/* 
+獎項頁面 
+*/
+.prize-box {
+  width: 82%;
+  margin: 0 auto;
+}
+.prize .btn-box {
+  margin: 20px 0 20px;
+}
+/* 
+遊戲過場
+*/
+.animation-loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url("~/assets/images/bg.png") #59c6f2;
+  background-size: 30%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  z-index: 10000;
+}
+.animation-loading img {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto 100px;
+}
+
+/*---------*\
+   加碼任務
+\*---------*/
+.prize-pic {
+  position: relative;
+}
+.prize-pic a {
+  display: block;
+  position: absolute;
+}
+.prize-pic a.link1 {
+  width: 16%;
+  height: 16%;
+  left: 34%;
+  top: 6%;
+}
+.prize-pic a.link2 {
+  width: 40%;
+  height: 16%;
+  left: 3%;
+  top: 40%;
+}
+.mission-list {
+  width: 96%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.mission-box {
+  width: calc(50% - 5px);
+  margin: 0 0 10px 0;
+  padding: 20px 20px 15px;
+  border-radius: 15px;
+  background: #ffc844;
+}
+.mission-box ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.mission-box ul li {
+  width: 40%;
+  margin: 0 10px 0 0;
+  display: flex;
+  align-items: center;
+}
+.mission-box ul li:last-child {
+  margin: 0;
+}
+.mission-box p {
+  color: #6c341b;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.mission-box ul a {
+  color: #bc4421;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.mission-box.complete {
+  background: #e8383d;
+}
+.mission-box.complete p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mission-box.complete p span {
+  color: #fff;
+  font-size: 16px;
+}
+.mission-box.complete p img {
+  width: 2em;
+}
+
+/*---------*\
+    rule頁
+\*---------*/
+/* 注意事項 */
+.rule-content {
+  width: 96%;
+  margin: 0 auto;
+  padding: 25px 14px 1px 14px;
+  background: #fff;
+  border-radius: 15px;
+  line-height: 1.5;
+}
+.rule-content h3 {
+  width: max-content;
+  max-width: 90%;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto 10px auto;
+  color: #0055a7;
+  text-align: center;
+  position: relative;
+  line-height: 1.4;
+}
+.rule-content h3:before,
+.rule-content h3:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: url("~/assets/images/rule-subtitle.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+.rule-content h3:before {
+  top: 4px;
+  left: -24px;
+}
+.rule-content h3:after {
+  top: 4px;
+  right: -24px;
+}
+.rule-content h3 span {
+  color: #e60045;
+}
+.rule-content h4 {
+  width: max-content;
+  max-width: 90%;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px auto;
+  color: #58ba85;
+}
+.rule-content h4:before,
+.rule-content h4:after {
+  content: "≈";
+  margin: 0 5px;
+}
+.rule-content p {
+  text-align: left;
+}
+.rule-content .rule-box {
+  margin-bottom: 30px;
+}
+.rule-content ul {
+  list-style: decimal;
+  text-align: left;
+}
+.rule-content ul li {
+  margin: 0 0 0.4em 1.6em;
+}
+.rule-content ul li > ul {
+  list-style: disc;
+}
+
+/* 表格 */
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #c5c5c5;
+  line-height: 1.4em;
+}
+table th,
+table td {
+  padding: 8px 5px;
+}
+table th {
+  color: #fff;
+  line-height: 1.2em;
+  border: 1px solid #c5c5c5;
+}
+table td {
+  border: 1px solid #c5c5c5;
+}
+table .th-1 {
+  width: 50%;
+  background-color: #0055a7;
+}
+table .th-2 {
+  width: 50%;
+  background-color: #e60045;
+}
+table.time-box .th-1 {
+  width: 40%;
+}
+table.time-box .th-2 {
+  width: 40%;
+}
+table.time-box .th-3 {
+  width: 20%;
+  background-color: #e60045;
+}
+
+/* 
+popup 
+*/
+.mask {
+  z-index: 9999;
+  display: block;
+}
+.mask .content {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mask .content .popup {
+  width: 86%;
+  max-width: 400px;
+  height: auto;
+  min-height: 280px;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.15);
+}
+.mask .content .popup h3 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #0f1d40;
+  margin-bottom: 20px;
+}
+
+.Fz\(16px\) {
+  font-size: 16px;
+}
+.Fz\(18px\) {
+  font-size: 18px;
+}
+.Fz\(20px\) {
+  font-size: 20px;
+}
+.Fz\(24px\) {
+  font-size: 24px;
+}
+.Fz\(36px\) {
+  font-size: 36px;
+}
+.Fz\(50px\) {
+  font-size: 50px;
+}
+.Fz\(150px\) {
+  font-size: 150px;
+}
+.Fw\(b\) {
+  font-weight: bold;
+}
+.Ta\(c\) {
+  text-align: center;
+}
+.W\(180px\) {
+  width: 180px;
+}
+.W\(140px\) {
+  width: 140px;
+}
+.W\(250px\) {
+  width: 250px;
+}
+.H\(70px\) {
+  height: 70px;
+}
+.C\(\#FF8300\) {
+  color: #ff8300;
+}
+.C\(\#408F4D\) {
+  color: #408f4d;
+}
+.C\(\#23B5EF\) {
+  color: #23b5ef;
+}
+.C\(\#DA3731\) {
+  color: #da3731;
+}
+
+@keyframes breath {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes blink {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes rotate-R {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+@keyframes rotate-L {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}

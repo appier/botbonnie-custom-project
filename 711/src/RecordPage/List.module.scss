@@ -1,0 +1,220 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.03));
+}
+
+.tapContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+
+  .tap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 162px;
+    height: 84px;
+    flex: 1 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 12.5px;
+
+    .icon {
+      display: flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+      margin-top: 12px;
+    }
+
+    .name {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 12px;
+      padding-bottom: 4px;
+      color: #000000;
+      padding: 0 8px;
+    }
+
+    .bottomLine {
+      display: flex;
+      visibility: hidden;
+      height: 2px;
+      width: 100%;
+      background-color: #ff8a00;
+      margin-top: auto;
+    }
+
+    &.active {
+      .name {
+        color: #2f2f2f;
+      }
+      .bottomLine {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.record {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 12px 0px 12px;
+  background-color: white;
+  cursor: pointer;
+  transition: all .3s;
+
+  &.opened {
+    background-color: #F7F8F9;
+  }
+
+  .innerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .informationWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+
+    .image {
+      display: flex;
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      margin-right: 12px;
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      background-size: cover;
+    }
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: auto;
+
+    .prizeName {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 16px;
+      color: #2f2f2f;
+      margin-bottom: 8px;
+    }
+
+    .tagInfo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+
+      .tag {
+        padding: 2px 4px;
+        height: 16px;
+        border-radius: 4px;
+
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+
+        &.purple {
+          color: #864cff;
+          background: #f3ecff;
+        }
+
+        &.azure {
+          background: #dcf6ff;
+          color: #00aee6;
+        }
+      }
+
+      .info {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    .campaignName {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      margin: 8px 0 4px 0;
+    }
+  }
+  .rightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 6px 9px;
+    background: #ff8a00;
+    border-radius: 40px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    min-width: 80px;
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 8px;
+
+    &.redeemed,
+    &.expired {
+      cursor: not-allowed;
+      background: rgba(0, 10, 58, 0.07);
+      opacity: 0.5;
+      color: #2f2f2f;
+    }
+  }
+
+  .pureText {
+    width: 80px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #2f2f2f;
+  }
+
+  .direction {
+    width: 16px;
+    height: 16px;
+    margin-top: 12px;
+    cursor: pointer;
+
+    &.bottom {
+      transform-origin: center;
+      transform: rotate(180deg);
+    }
+  }
+
+  .bottomLine {
+    display: flex;
+    height: 1px;
+    width: 100%;
+    background-color: #eeeeee;
+    margin-top: 16px;
+  }
+}
