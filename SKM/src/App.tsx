@@ -18,7 +18,7 @@ function App() {
           />
           <Route
             path={PATH_CONFIG[ROUTE_KEY.POLICY].path}
-            element={<BindingSuccessPage />}
+            element={<Policy />}
           />
           <Route path={PATH_CONFIG[ROUTE_KEY.OTP].path} element={<OTP />} />
           <Route
