@@ -41,12 +41,13 @@ const Input: React.FC<Props> = ({
         {TYPE_LABEL[type]}
       </label>
       <input
-        type="phone"
+        type="text"
+        inputMode="numeric"
         maxLength={TYPE_MAX_INPUT[type]}
         placeholder={placeholder}
         value={value}
         onChange={handleOnChange}
-        className="flex min-w-0 px-2 py-3 flex-1 outline-none border-b border-solid border-b-[#cccccc] focus:border-b-[var(--color-main-darken)] text-right"
+        className="flex min-w-0 px-2 py-3 flex-1 outline-none border-b border-solid border-b-[#cccccc] focus:border-b-[var(--color-main-darken)] text-right rounded-none"
       />
     </div>
   );

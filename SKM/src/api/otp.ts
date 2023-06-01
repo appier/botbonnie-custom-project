@@ -1,9 +1,8 @@
-import { API_ENDPOINT } from "./index";
 import { withAuth } from "./index";
 
 export const sendOtp = ({ mobilePhone }: { mobilePhone: string }) => {
   return withAuth()
-    .post(`${API_ENDPOINT}skm/otp`, {
+    .post("skm/otp", {
       mobilePhone,
     })
     .then(({ data }) => data as Promise<{}>);
@@ -17,7 +16,7 @@ export const verifyOtp = ({
   otpCode: string;
 }) => {
   return withAuth()
-    .post(`${API_ENDPOINT}skm/otp/validation`, {
+    .post("skm/otp/validation", {
       mobilePhone,
       otpCode,
     })

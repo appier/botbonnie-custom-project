@@ -1,4 +1,3 @@
-import { atom, useAtom } from "jotai";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const useResendTimer = ({

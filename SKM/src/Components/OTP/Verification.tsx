@@ -15,6 +15,7 @@ interface Props {
 
 const Verification: React.FC<Props> = ({ phoneNumber }) => {
   const [otpCode, setOtpCode] = useState("");
+  const [isFetching, setFetching] = useState(false);
   const [inputError, setInputError] = useState("");
 
   const timer = useResendTimer({
@@ -23,23 +24,28 @@ const Verification: React.FC<Props> = ({ phoneNumber }) => {
   });
 
   const handleSubmit = useCallback(() => {
+    if (isFetching) return;
     if (!otpCode) {
       setInputError(ERROR.FORMAT);
     } else {
+      setFetching(true);
       verifyOtp({
         mobilePhone: phoneNumber,
         otpCode,
       })
         .then((res) => {
           const { url } = res;
-          if (url) window.location.replace(url);
+          if (url) {
+            window.location.href = url;
+          }
         })
         .catch((resp) => {
           const { message = "" } = resp?.response?.data?.error || {};
           if (message) window.alert(message);
+          setFetching(false);
         });
     }
-  }, [otpCode]);
+  }, [otpCode, isFetching]);
 
   const resendOtp = useCallback(() => {
     sendOtp({
@@ -70,7 +76,11 @@ const Verification: React.FC<Props> = ({ phoneNumber }) => {
         )}
 
         <div className="px-6 mt-8">
-          <button className="btn btn-primary btn-sm" onClick={handleSubmit}>
+          <button
+            disabled={isFetching}
+            className="btn btn-primary btn-sm"
+            onClick={handleSubmit}
+          >
             確認送出
           </button>
         </div>

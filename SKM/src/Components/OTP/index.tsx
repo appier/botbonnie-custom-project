@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import Page from "../Page";
 import Input from "./Input";
 import Verification from "./Verification";
@@ -12,7 +12,6 @@ const OTP: React.FC = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inputError, setInputError] = useState("");
   const [showVerification, setShowVerification] = useState(false);
-  const [isSendingOtp, setSendingOtp] = useState(false);
 
   const checkPhoneValid = (val: string) => {
     if (val.length === 10 && val.startsWith("09")) return true;
@@ -25,13 +24,10 @@ const OTP: React.FC = () => {
     if (!valid) setInputError(ERROR.FORMAT);
     else {
       setInputError("");
-      setSendingOtp(true);
       sendOtp({
         mobilePhone: phoneNumber,
-      }).then(() => {
-        setSendingOtp(false);
-        setShowVerification(true);
       });
+      setShowVerification(true);
     }
   }, [phoneNumber]);
 
@@ -53,11 +49,7 @@ const OTP: React.FC = () => {
           {inputError && <div className="text-sm text-error">{inputError}</div>}
         </div>
         <div className="px-6 mt-8">
-          <button
-            disabled={isSendingOtp}
-            className="btn btn-primary btn-sm"
-            onClick={handleSubmit}
-          >
+          <button className="btn btn-primary btn-sm" onClick={handleSubmit}>
             確認送出
           </button>
         </div>
