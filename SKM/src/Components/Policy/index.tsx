@@ -23,7 +23,7 @@ const Policy: React.FC = () => {
             onClick={() => {
               setChecked(!checked);
             }}
-            className="checkbox checkbox-sm"
+            className="w-[1.25rem] h-[1.25rem]"
           />
           <span className="label-text text-white ml-2">
             我已詳閱並同意上述個資蒐集告知事項
