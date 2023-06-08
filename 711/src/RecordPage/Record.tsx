@@ -19,8 +19,10 @@ const RECORD_STATUS = {
 export interface RecordTypes {
   historyId: string;
   name: string;
-  redeemPeriod: number;
-  redeemTime: number;
+  redeemPeriod?: {
+    end: number;
+  };
+  redeemTime?: number;
   expired: boolean;
   timestamp: number;
   needRedeem: number;
@@ -32,7 +34,7 @@ export interface RecordTypes {
 
 interface Props {
   data: RecordTypes;
-  viewPrize: () => void;
+  viewPrize: (id: string) => void;
 }
 
 const Record: React.FC<Props> = ({ data, viewPrize }) => {
@@ -57,10 +59,7 @@ const Record: React.FC<Props> = ({ data, viewPrize }) => {
         className={styles.button}
         onClick={(e) => {
           e.stopPropagation();
-          // viewPrize({
-          //   kitId: get(campaign, "id", ""),
-          //   historyId,
-          // });
+          viewPrize(historyId);
         }}
       >
         查看

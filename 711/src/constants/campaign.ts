@@ -1,0 +1,41 @@
+export const DRAW_CODE = {
+  NO_ERROR: 0,
+  GENERAL_ERROR: 1,
+  SYSTEM_BUSY: 2,
+  CAMPAIGN_NOT_RUNNING: 11,
+  NO_PRODUCT_TO_DRAW: 15,
+  DAILY_MAXIMUM_REACHED: 23,
+};
+
+export const REDEEM_TYPE = {
+  URL: "URL",
+  BAR_CODE: "BARCODE",
+  SERIAL_NUMBER: "SERIAL_NUMBER",
+  PHYSICAL: "PHYSICAL",
+  MESSAGE: "MESSAGE",
+};
+
+export const RECORD_SUBTYPE = {
+  BAR_CODE_39: "barcode_code39",
+  BAR_CODE_128: "barcode_code128",
+  BAR_CODE_ITF14: "barcode_itf14",
+  BAR_CODE_MSI: "barcode_msi",
+  BAR_CODE_PHARMACODE: "barcode_pharmacode",
+  BAR_CODE_CODABAR: "barcode_codabar",
+  URL: "url",
+  BAR_CODE_EAN8: "barcode_ean8",
+  BAR_CODE_EAN5: "barcode_ean5",
+  BAR_CODE_EAN13: "barcode_ean13",
+};
+
+export const BAR_CODE_FORMAT = {
+  [RECORD_SUBTYPE.BAR_CODE_39]: "CODE39",
+  [RECORD_SUBTYPE.BAR_CODE_128]: "CODE128",
+  [RECORD_SUBTYPE.BAR_CODE_ITF14]: "ITF14",
+  [RECORD_SUBTYPE.BAR_CODE_MSI]: "MSI",
+  [RECORD_SUBTYPE.BAR_CODE_PHARMACODE]: "pharmacode",
+  [RECORD_SUBTYPE.BAR_CODE_CODABAR]: "codabar",
+  [RECORD_SUBTYPE.BAR_CODE_EAN5]: "EAN5",
+  [RECORD_SUBTYPE.BAR_CODE_EAN8]: "EAN8",
+  [RECORD_SUBTYPE.BAR_CODE_EAN13]: "EAN13",
+};

@@ -1,7 +1,40 @@
+import { useCallback } from "react";
+import { atom, useAtom } from "jotai";
 import idolLin from "~/assets/images/idol-lin.png";
 import missionPic from "~/assets/images/mission-idx-pic.png";
+import useNavigate from "~/hooks/useNavigate";
+import { ROUTE_KEY } from "~/constants/route";
+
+import { checkUserQuota } from "../api/campaign";
+import useAuth from "../hooks/useAuth";
+
+export const quotaAtom = atom(0);
 
 const Home = () => {
+  const user = useAuth();
+  const navigate = useNavigate();
+  const [, setQuota] = useAtom(quotaAtom);
+
+  const goToDraw = useCallback(() => {
+    checkUserQuota({ kitId: user.kitId })
+      .then((res) => {
+        setQuota(res?.remaining ?? 0);
+        if (res?.remaining > 0) {
+          navigate(ROUTE_KEY.GAME);
+        } else {
+          window.alert("您今天已經到達抽獎上限次數囉 請明天再來參加");
+        }
+      })
+      .catch((err) => {
+        const { message } = err?.response?.data || {};
+        if (message) window.alert(message);
+      });
+  }, [user, checkUserQuota]);
+
+  const goToRule = useCallback(() => {
+    navigate(ROUTE_KEY.RULE);
+  }, [navigate]);
+
   return (
     <section className="wrap">
       <div>
@@ -36,12 +69,15 @@ const Home = () => {
             </p>
 
             <div className="btn-box">
-              <div className="btn btn-style1 W(250px) btn-animat">
+              <div
+                className="btn btn-style1 W(250px) btn-animat"
+                onClick={goToDraw}
+              >
                 <div>立即GO ►</div>
               </div>
             </div>
             <div className="btn-box">
-              <div className="btn btn-style2 W(250px) ">
+              <div className="btn btn-style2 W(250px)" onClick={goToRule}>
                 <div>活動辦法</div>
               </div>
             </div>

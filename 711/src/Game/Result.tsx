@@ -1,53 +1,38 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
+import { useAtom } from "jotai";
+
+import { RecordTypes } from "~/RecordPage/Record";
 import Prize1 from "~/assets/images/prize_01.png";
 import Prize2 from "~/assets/images/prize_02.png";
 import Prize3 from "~/assets/images/prize_03.png";
 import Prize4 from "~/assets/images/prize_03.png";
+import { ROUTE_KEY } from "~/constants/route";
+import useNavigate from "~/hooks/useNavigate";
+import { quotaAtom } from "~/Home";
 
 interface Props {
-  prizeKey: string;
+  data: RecordTypes;
+  onRetry: () => void;
 }
 
-const Result: React.FC<Props> = ({ prizeKey }) => {
-  const prizes = useMemo(() => {
-    return [
-      {
-        id: "prize_01",
-        text: "指定冰品任2件0元",
-        imageUrl: Prize1,
-      },
-      {
-        id: "prize_02",
-        text: "指定冰品任2件5折",
-        imageUrl: Prize2,
-      },
-      {
-        id: "prize_03",
-        text: "指定冰品任2件7折",
-        imageUrl: Prize3,
-      },
-      {
-        id: "prize_04",
-        text: "指定冰品任2件9折",
-        imageUrl: Prize4,
-      },
-    ];
-  }, []);
+const Result: React.FC<Props> = ({ data, onRetry }) => {
+  const navigate = useNavigate();
+  const [quota] = useAtom(quotaAtom);
 
-  const result = useMemo(() => {
-    return prizes.find((prize) => prize.id === prizeKey);
-  }, [prizeKey]);
+  const goToHomePage = useCallback(() => {
+    navigate(ROUTE_KEY.HOME);
+  }, [navigate]);
   return (
     <>
       <div className="prize">
         <div>
           <div className="prize-box">
-            <img src={Prize1} alt="" />
+            <img src={data?.image?.url} alt="" />
           </div>
           <p>
             恭喜獲得
             <br />
-            <span>{result?.text || ""}</span>
+            <span>{data.name || ""}</span>
             <br />
             請至{" "}
             <a href="notexist.html?act=GoMyRewards">
@@ -57,10 +42,12 @@ const Result: React.FC<Props> = ({ prizeKey }) => {
             查詢中獎條碼
           </p>
           <div className="flex w-full flex-row">
-            <div className="btn btn-style1 flex-1">
-              <div>再試一次</div>
-            </div>
-            <div className="btn btn-style2 flex-1">
+            {quota > 0 && (
+              <div className="btn btn-style1 flex-1" onClick={onRetry}>
+                <div>再試一次</div>
+              </div>
+            )}
+            <div className="btn btn-style2 flex-1" onClick={goToHomePage}>
               <div>回首頁</div>
             </div>
           </div>

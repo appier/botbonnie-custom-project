@@ -17,7 +17,7 @@ import expiredInactive from "./expired-inactive.svg";
 
 interface Props {
   records: RecordTypes[];
-  viewPrize: () => void;
+  viewPrize: (id: string) => void;
   isFetching: boolean;
 }
 

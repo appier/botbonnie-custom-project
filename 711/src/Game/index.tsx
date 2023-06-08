@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { useAtom } from "jotai";
 import animation from "~/assets/images/animation-loading.gif";
 import finger from "~/assets/images/icon-finger.svg";
 import Game1 from "~/assets/images/game_01.jpg";
@@ -7,12 +8,20 @@ import Game3 from "~/assets/images/game_03.jpg";
 import Game4 from "~/assets/images/game_04.jpg";
 import DrawAnimation from "~/assets/images/btn_act.gif";
 import Result from "./Result";
+import { drawPrize } from "~/api/campaign";
+import useAuth from "~/hooks/useAuth";
+import { RecordTypes } from "~/RecordPage/Record";
+import useNavigate from "~/hooks/useNavigate";
+import { ROUTE_KEY } from "~/constants/route";
+import { quotaAtom } from "~/Home";
 
 const Game = () => {
-  const [drawIndex, setDrawIndex] = useState<number>();
+  const [drawIndex, setDrawIndex] = useState<number | null>(null);
   const [isFetching, setFetching] = useState<boolean>(false);
-  const [prizeKey, setPrizeKey] = useState("");
-
+  const [prize, setPrize] = useState<RecordTypes | null>(null);
+  const [, setQuota] = useAtom(quotaAtom);
+  const { kitId } = useAuth();
+  const navigate = useNavigate();
   const handleDraw = useCallback(
     (e: React.SyntheticEvent) => {
       if (e.target instanceof HTMLImageElement && !isFetching) {
@@ -20,15 +29,31 @@ const Game = () => {
         if (gameIndex) {
           setFetching(true);
           setDrawIndex(Number(gameIndex));
-          setTimeout(() => {
-            setPrizeKey("prize_02");
-            setFetching(false);
-          }, 2200);
+          drawPrize({
+            kitId,
+          })
+            .then((res) => {
+              setPrize(res);
+              setQuota((prev) => prev - 1);
+              setFetching(false);
+            })
+            .catch((err) => {
+              const { message } = err.response.data || {};
+              if (message) {
+                window.alert(message);
+                navigate(ROUTE_KEY.HOME);
+              }
+            });
         }
       }
     },
-    [isFetching]
+    [isFetching, kitId]
   );
+
+  const handleRetry = useCallback(() => {
+    setDrawIndex(null);
+    setPrize(null);
+  }, []);
 
   return (
     <>
@@ -55,8 +80,8 @@ const Game = () => {
 
             <div className="title-page"></div>
 
-            {prizeKey ? (
-              <Result prizeKey={prizeKey} />
+            {prize ? (
+              <Result data={prize} onRetry={handleRetry} />
             ) : (
               <div id="event">
                 <div className="gamecard">
