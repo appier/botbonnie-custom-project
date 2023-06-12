@@ -1,11 +1,12 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { atom, useAtom } from "jotai";
+import cx from "classnames";
 import idolLin from "~/assets/images/idol-lin.png";
 import missionPic from "~/assets/images/mission-idx-pic.png";
 import useNavigate from "~/hooks/useNavigate";
 import { ROUTE_KEY } from "~/constants/route";
 
-import { checkUserQuota } from "../api/campaign";
+import { checkUserQuota, getShareLink } from "../api/campaign";
 import useAuth from "../hooks/useAuth";
 
 export const quotaAtom = atom(0);
@@ -14,6 +15,7 @@ const Home = () => {
   const user = useAuth();
   const navigate = useNavigate();
   const [, setQuota] = useAtom(quotaAtom);
+  const [isFetching, setFetching] = useState(false);
 
   const goToDraw = useCallback(() => {
     checkUserQuota({ kitId: user.kitId })
@@ -34,6 +36,20 @@ const Home = () => {
   const goToRule = useCallback(() => {
     navigate(ROUTE_KEY.RULE);
   }, [navigate]);
+
+  const getLink = useCallback(async () => {
+    if (!isFetching) {
+      setFetching(true);
+      const { url } = await getShareLink({
+        kitId: user.kitId,
+      });
+
+      if (url) {
+        window.location.href = url;
+      }
+      setFetching(false);
+    }
+  }, [isFetching]);
 
   return (
     <section className="wrap">
@@ -79,6 +95,25 @@ const Home = () => {
             <div className="btn-box">
               <div className="btn btn-style2 W(250px)" onClick={goToRule}>
                 <div>活動辦法</div>
+              </div>
+            </div>
+
+            <div
+              className={cx(
+                "flex items-center justify-center font-semibold text-[20px] cursor-pointer",
+                {
+                  "text-[#64646461]": isFetching,
+                }
+              )}
+              onClick={getLink}
+            >
+              <div className="relative">
+                分享好友
+                {isFetching && (
+                  <div className="absolute left-full top-1/2 transform -translate-y-1/2 translate-x-2">
+                    <div className="w-5 h-5 border-[3px] border-t-white border-[#c9c9c952] rounded-full animate-spin" />
+                  </div>
+                )}
               </div>
             </div>
           </div>

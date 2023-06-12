@@ -23,3 +23,14 @@ export const getHistory = ({ kitId }: { kitId: string }) => {
     .get(`pcsc/lotteryEvent/${kitId}/history`)
     .then(({ data }) => data as Promise<RecordTypes[]>);
 };
+
+export const getShareLink = ({ kitId }: { kitId: string }) => {
+  return withAuth()
+    .get(`pcsc/lotteryEvent/${kitId}/mylink`)
+    .then(
+      ({ data }) =>
+        data as Promise<{
+          url: string;
+        }>
+    );
+};
