@@ -45,7 +45,7 @@ const Verification: React.FC<Props> = ({ phoneNumber }) => {
           setFetching(false);
         });
     }
-  }, [otpCode, isFetching]);
+  }, [otpCode, isFetching, phoneNumber]);
 
   const resendOtp = useCallback(() => {
     sendOtp({
