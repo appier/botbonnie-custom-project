@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import { PATH_CONFIG, ROUTE_KEY } from "./constants/route";
 import AccountBinding from "./Components/AccountBinding";
 import Policy from "./Components/Policy";
+import BindingSuccessPage from "./Components/BindingSuccessPage";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
             element={<Policy />}
           />
           <Route path={PATH_CONFIG[ROUTE_KEY.OTP].path} element={<OTP />} />
+          <Route
+            path={PATH_CONFIG[ROUTE_KEY.BINDING_SUCCESS].path}
+            element={<BindingSuccessPage />}
+          />
         </RouterHandler>
       </Auth>
     </div>

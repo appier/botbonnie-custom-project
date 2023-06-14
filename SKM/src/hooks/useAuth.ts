@@ -8,7 +8,7 @@ type userProps = {
   isLogin: boolean;
 };
 
-const userAtom = atom<userProps>({
+export const userAtom = atom<userProps>({
   isLogin: false,
 });
 
