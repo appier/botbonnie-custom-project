@@ -9,6 +9,28 @@
   <body>
     <div id="root"></div>
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <!-- LINE Point Ads CV Tracking Code Start -->
+    <script type="text/javascript">
+      var freecoins_cvq = [
+        {
+          app: "FREECOINS_33428",
+          domain: ".botbonnie.com",
+          cv: [
+            {
+              action: "REGISTRATION",
+              order: "Order ID (required, max 128 bytes)",
+              item: "Item ID or Name (optional, max 255 bytes)",
+              t_price:
+                "Total price user paid for this item (optional, example: 1.00)",
+              quantity: "Quantity of this item purchased (optional, number)",
+              memo: "Any memo string for this conversion (optional, max 255 bytes)",
+            },
+          ],
+        },
+      ];
+    </script>
+    <script src="https://point-ads.line-apps.com/lfc5.js" async></script>
+    <!-- LINE Point Ads CV Tracking Code End -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
