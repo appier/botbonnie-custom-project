@@ -33,7 +33,7 @@ interface props {
   redeem: () => void;
 }
 
-const Prize: React.FC<props> = ({ prize, redeem }) => {
+const Prize: React.FC<props> = ({ prize }) => {
   const redeemType = useMemo(() => {
     if (prize.subtype === RECORD_SUBTYPE.URL) return REDEEM_TYPE.URL;
     if (prize.subtype && Object.keys(BAR_CODE_FORMAT).includes(prize.subtype))

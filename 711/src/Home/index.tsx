@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { atom, useAtom } from "jotai";
-import cx from "classnames";
+
 import idolLin from "~/assets/images/idol-lin.png";
 import missionPic from "~/assets/images/mission-idx-pic.png";
 import useNavigate from "~/hooks/useNavigate";
@@ -98,22 +98,16 @@ const Home = () => {
               </div>
             </div>
 
-            <div
-              className={cx(
-                "flex items-center justify-center font-semibold text-[20px] cursor-pointer",
-                {
-                  "text-[#64646461]": isFetching,
-                }
-              )}
-              onClick={getLink}
-            >
-              <div className="relative">
-                分享好友
-                {isFetching && (
-                  <div className="absolute left-full top-1/2 transform -translate-y-1/2 translate-x-2">
-                    <div className="w-5 h-5 border-[3px] border-t-white border-[#c9c9c952] rounded-full animate-spin" />
-                  </div>
-                )}
+            <div className="btn-box">
+              <div className="btn btn-style2 W(250px)" onClick={getLink}>
+                <div className="relative">
+                  分享好友
+                  {isFetching && (
+                    <div className="absolute left-full top-1/2 transform -translate-y-1/2 translate-x-2">
+                      <div className="w-5 h-5 border-[3px] border-t-white border-[#c9c9c952] rounded-full animate-spin" />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>

@@ -1,8 +1,7 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import cx from "classnames";
 import get from "lodash/get";
 
-import DirectionIcon from "./direction.svg";
 import styles from "./List.module.scss";
 import moment from "moment";
 
@@ -38,7 +37,7 @@ interface Props {
 }
 
 const Record: React.FC<Props> = ({ data, viewPrize }) => {
-  const { historyId, name, timestamp, redeemPeriod, image = {} } = data;
+  const { historyId, name, redeemPeriod, image = {} } = data;
 
   const buttonStatus = useMemo(() => {
     if (data.needRedeem !== 1 && !data.value) {

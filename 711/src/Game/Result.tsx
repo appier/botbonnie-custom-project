@@ -1,11 +1,7 @@
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 import { useAtom } from "jotai";
 
 import { RecordTypes } from "~/RecordPage/Record";
-import Prize1 from "~/assets/images/prize_01.png";
-import Prize2 from "~/assets/images/prize_02.png";
-import Prize3 from "~/assets/images/prize_03.png";
-import Prize4 from "~/assets/images/prize_03.png";
 import { ROUTE_KEY } from "~/constants/route";
 import useNavigate from "~/hooks/useNavigate";
 import { quotaAtom } from "~/Home";
