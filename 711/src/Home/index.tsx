@@ -1,13 +1,12 @@
 import { useCallback, useState } from "react";
 import { atom, useAtom } from "jotai";
 
-import idolLin from "~/assets/images/idol-lin.png";
-import missionPic from "~/assets/images/mission-idx-pic.png";
 import useNavigate from "~/hooks/useNavigate";
 import { ROUTE_KEY } from "~/constants/route";
 
 import { checkUserQuota, getShareLink } from "../api/campaign";
 import useAuth from "../hooks/useAuth";
+import Menu from "~/Menu";
 
 export const quotaAtom = atom(0);
 
@@ -55,31 +54,15 @@ const Home = () => {
     <section className="wrap">
       <div>
         <div className="container">
-          <div className="navToggle">
-            <div className="icon"></div>
-          </div>
-          <div id="menu">
-            <ul>
-              <li>
-                <a href="index.html">回首頁</a>
-              </li>
-              <li>
-                <a href="rule.html">活動辦法</a>
-              </li>
-            </ul>
-          </div>
+          <Menu currentRouteKey={ROUTE_KEY.HOME} />
+
+          <div className="bg-idx"></div>
           <div className="title-idx"></div>
-          <div className="title-idol">
-            <div className="title-pic2">
-              <img src={idolLin} alt="" />
-            </div>
-          </div>
-          <div className="mission-pic">
-            <img src={missionPic} alt="" />
-          </div>
+          <div className="title-idol"></div>
+
           <div className="idx_info">
             <p className="idx-text_box">
-              活動日期:2023/05/17~06/27
+              活動日期:2023/7/17~08/22
               <br />
               <span>每人每天2次機會</span>
             </p>

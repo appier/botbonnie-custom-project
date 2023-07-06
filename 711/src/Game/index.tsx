@@ -2,10 +2,10 @@ import { useCallback, useState } from "react";
 import { useAtom } from "jotai";
 import animation from "~/assets/images/animation-loading.gif";
 import finger from "~/assets/images/icon-finger.svg";
-import Game1 from "~/assets/images/game_01.jpg";
-import Game2 from "~/assets/images/game_02.jpg";
-import Game3 from "~/assets/images/game_03.jpg";
-import Game4 from "~/assets/images/game_04.jpg";
+import Game1 from "~/assets/images/game_01.png";
+import Game2 from "~/assets/images/game_02.png";
+import Game3 from "~/assets/images/game_03.png";
+import Game4 from "~/assets/images/game_04.png";
 import DrawAnimation from "~/assets/images/btn_act.gif";
 import Result from "./Result";
 import { drawPrize } from "~/api/campaign";
@@ -14,6 +14,7 @@ import { RecordTypes } from "~/RecordPage/Record";
 import useNavigate from "~/hooks/useNavigate";
 import { ROUTE_KEY } from "~/constants/route";
 import { quotaAtom } from "~/Home";
+import Menu from "~/Menu";
 
 const Game = () => {
   const [drawIndex, setDrawIndex] = useState<number | null>(null);
@@ -64,19 +65,7 @@ const Game = () => {
       <section className="wrap">
         <div className="bg">
           <div className="container">
-            <div className="navToggle">
-              <div className="icon"></div>
-            </div>
-            <div id="menu">
-              <ul>
-                <li>
-                  <a href="index.html">回首頁</a>
-                </li>
-                <li>
-                  <a href="rule.html">活動辦法</a>
-                </li>
-              </ul>
-            </div>
+            <Menu currentRouteKey={ROUTE_KEY.GAME} />
 
             <div className="title-page"></div>
 
@@ -101,7 +90,7 @@ const Game = () => {
                       />
                     </li>
                   </ul>
-                  <ul>
+                  <ul className="mt-2">
                     <li>
                       <img
                         data-game={2}
