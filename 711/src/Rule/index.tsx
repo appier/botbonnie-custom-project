@@ -1,24 +1,12 @@
+import Menu from "~/Menu";
+import { ROUTE_KEY } from "~/constants/route";
+
 const Rule = () => {
   return (
     <section className="wrap">
       <div className="bg">
         <div className="container inner-page">
-          <div className="navToggle">
-            <div className="icon"></div>
-          </div>
-          <div id="menu">
-            <ul>
-              <li>
-                <a href="index.html">回首頁</a>
-              </li>
-              <li>
-                <a href="rule.html">活動辦法</a>
-              </li>
-              <li>
-                <a href="mission.html">加碼活動</a>
-              </li>
-            </ul>
-          </div>
+          <Menu currentRouteKey={ROUTE_KEY.RULE} />
 
           <div className="gotop">TOP</div>
 
@@ -34,7 +22,7 @@ const Rule = () => {
           <div className="rule-content">
             <div className="rule-box">
               <h3>
-                冰品抽抽樂<span>活動期間</span>
+                飲料抽抽樂<span>活動期間</span>
               </h3>
               <table>
                 <tbody>
@@ -45,208 +33,160 @@ const Rule = () => {
                   <tr>
                     <td>
                       <strong>
-                        5/17(10:00)~
+                        7/17(10:00)~
                         <br />
-                        5/18(19:00)
+                        7/20(19:00)
                       </strong>
                     </td>
                     <td>
                       <strong>
-                        5/17(10:00)~
+                        7/17(10:00)~
                         <br />
-                        5/18(23:59)
-                      </strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>
-                        5/19(00:00)~
-                        <br />
-                        5/21(19:00)
-                      </strong>
-                    </td>
-                    <td>
-                      <strong>
-                        5/19(00:00)~
-                        <br />
-                        5/21(23:59)
+                        7/20(23:59)
                       </strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        5/22(00:00)~
+                        7/21(00:00)~
                         <br />
-                        5/25(19:00)
+                        7/23(19:00)
                       </strong>
                     </td>
                     <td>
                       <strong>
-                        5/22(00:00)~
+                        7/21(00:00)~
                         <br />
-                        5/25(23:59)
-                      </strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>
-                        5/26(00:00)~
-                        <br />
-                        5/28(19:00)
-                      </strong>
-                    </td>
-                    <td>
-                      <strong>
-                        5/26(00:00)~
-                        <br />
-                        5/28(23:59)
+                        7/23(23:59)
                       </strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        5/29(00:00)~
+                        7/24(00:00)~
                         <br />
-                        6/1(19:00)
+                        7/27(19:00)
                       </strong>
                     </td>
                     <td>
                       <strong>
-                        5/29(00:00)~
+                        7/24(00:00)~
                         <br />
-                        6/1(23:59)
-                      </strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>
-                        6/2(00:00)~
-                        <br />
-                        6/4(19:00)
-                      </strong>
-                    </td>
-                    <td>
-                      <strong>
-                        6/2(00:00)~
-                        <br />
-                        6/4(23:59)
+                        7/27(23:59)
                       </strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        6/5(00:00)~
+                        7/28(00:00)~
                         <br />
-                        6/8(19:00)
+                        7/30(19:00)
                       </strong>
                     </td>
                     <td>
                       <strong>
-                        6/5(00:00)~
+                        7/28(00:00)~
                         <br />
-                        6/8(23:59)
-                      </strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>
-                        6/9(00:00)~
-                        <br />
-                        6/11(19:00)
-                      </strong>
-                    </td>
-                    <td>
-                      <strong>
-                        6/9(00:00)~
-                        <br />
-                        6/11(23:59)
+                        7/30(23:59)
                       </strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        6/12(00:00)~
+                        7/31(00:00)~
                         <br />
-                        6/15(19:00)
+                        8/3(19:00)
                       </strong>
                     </td>
                     <td>
                       <strong>
-                        6/12(00:00)~
+                        7/31(00:00)~
                         <br />
-                        6/15(23:59)
-                      </strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>
-                        6/16(00:00)~
-                        <br />
-                        6/18(19:00)
-                      </strong>
-                    </td>
-                    <td>
-                      <strong>
-                        6/16(00:00)~
-                        <br />
-                        6/18(23:59)
+                        8/3(23:59)
                       </strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        6/19(00:00)~
+                        8/4(00:00)~
                         <br />
-                        6/22(19:00)
+                        8/6(19:00)
                       </strong>
                     </td>
                     <td>
                       <strong>
-                        6/19(00:00)~
+                        8/4(00:00)~
                         <br />
-                        6/22(23:59)
-                      </strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>
-                        6/23(00:00)~
-                        <br />
-                        6/25(19:00)
-                      </strong>
-                    </td>
-                    <td>
-                      <strong>
-                        6/23(00:00)~
-                        <br />
-                        6/25(23:59)
+                        8/6(23:59)
                       </strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        6/26(00:00)~
+                        8/7(00:00)~
                         <br />
-                        6/27(19:00)
+                        8/10(19:00)
                       </strong>
                     </td>
                     <td>
                       <strong>
-                        6/26(00:00)~
+                        8/7(00:00)~
                         <br />
-                        6/27(23:59)
+                        8/10(23:59)
+                      </strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        8/11(00:00)~
+                        <br />
+                        8/13(19:00)
+                      </strong>
+                    </td>
+                    <td>
+                      <strong>
+                        8/11(00:00)~
+                        <br />
+                        8/13(23:59)
+                      </strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        8/14(00:00)~
+                        <br />
+                        8/17(19:00)
+                      </strong>
+                    </td>
+                    <td>
+                      <strong>
+                        8/14(00:00)~
+                        <br />
+                        8/17(23:59)
+                      </strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        8/18(00:00)~
+                        <br />
+                        8/22(19:00)
+                      </strong>
+                    </td>
+                    <td>
+                      <strong>
+                        8/18(00:00)~
+                        <br />
+                        8/22(23:59)
                       </strong>
                     </td>
                   </tr>
@@ -256,26 +196,26 @@ const Rule = () => {
 
             <div className="rule-box">
               <h3>
-                冰品抽抽樂<span>活動方式</span>
+                飲料抽抽樂<span>活動方式</span>
               </h3>
               <ul>
                 <li>
                   活動時間內，由7-ELEVEN
-                  APP首頁點選”遊樂場”活動icon，進入國際冰品節活動，登入OPENPOINT會員即可參加。
+                  APP首頁點選”遊樂場”活動icon，進入飲料抽抽樂活動，登入OPENPOINT會員即可參加。
                 </li>
                 <li>每人(每組OPENPOINT會員帳號)每天限參加2次。</li>
                 <li>
-                  參加「國際冰品節」活動獲得的折扣條碼，可至7-ELEVEN APP
+                  參加「飲料抽抽樂」活動獲得的折扣條碼，可至7-ELEVEN APP
                   ”我的好康”→“活動贈獎”領取，憑條碼至門市使用折扣。
                 </li>
                 <li>每條碼限使用一次(折價一組)，使用過後條碼立即失效。</li>
-                <li>APP國際冰品節折扣條碼經刷讀後，商品恕無法退換貨。</li>
+                <li>APP飲料抽抽樂折扣條碼經刷讀後，商品恕無法退換貨。</li>
               </ul>
             </div>
 
             <div className="rule-box">
               <h3>
-                冰品抽抽樂<span>活動獎項</span>
+                飲料抽抽樂<span>活動獎項</span>
               </h3>
               <table>
                 <tbody>
@@ -285,7 +225,7 @@ const Rule = () => {
                   </tr>
                   <tr>
                     <td>
-                      <strong>指定冰品</strong>
+                      <strong>指定飲料</strong>
                     </td>
                     <td>
                       <strong>任選2件0元</strong>
@@ -293,106 +233,122 @@ const Rule = () => {
                   </tr>
                   <tr>
                     <td>
-                      <strong>指定冰品</strong>
+                      <strong>指定飲料</strong>
                     </td>
                     <td>
-                      <strong>任選2件5折</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>指定冰品</strong>
-                    </td>
-                    <td>
-                      <strong>任選2件7折</strong>
+                      <strong>任選2件49折</strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <strong>指定冰品</strong>
+                      <strong>指定飲料</strong>
                     </td>
                     <td>
-                      <strong>任選2件9折</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>菲律賓SW鳳梨冰</strong>
-                    </td>
-                    <td>
-                      <strong>免費送乙份</strong>
+                      <strong>任選2件59折</strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <strong>迷客夏蜜香伯爵拿鐵雪糕</strong>
+                      <strong>指定飲料</strong>
                     </td>
                     <td>
-                      <strong>免費送乙份</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>阿奇儂蜷尾家米香荔枝蜜紅茶雪糕</strong>
-                    </td>
-                    <td>
-                      <strong>免費送乙份</strong>
+                      <strong>任選2件69折</strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <strong>CAFE!N咖啡夾心醬雪糕脆脆</strong>
+                      <strong>指定飲料</strong>
                     </td>
                     <td>
-                      <strong>免費送乙份</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>LOTTE爽冰淇淋-香甜白桃</strong>
-                    </td>
-                    <td>
-                      <strong>免費送乙份</strong>
+                      <strong>任選2件79折</strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <strong>LOTTE雪見大福冰淇淋-醇奶布丁</strong>
+                      <strong>指定飲料</strong>
                     </td>
                     <td>
-                      <strong>免費送乙份</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>森永乳業MOW香草風味冰淇淋108g</strong>
-                    </td>
-                    <td>
-                      <strong>免費送乙份</strong>
+                      <strong>任選2件89折</strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <strong>森永乳業PARM絲滑濃厚抹茶雪糕</strong>
+                      <strong>黑松茶尋味臺灣春茶590ml</strong>
                     </td>
                     <td>
-                      <strong>免費送乙份</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>森永瑪莉餅乾焦糖冰淇淋</strong>
-                    </td>
-                    <td>
-                      <strong>免費送乙份</strong>
+                      <strong>免費送乙瓶</strong>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <strong>森永法式可麗餅冰(香草風味)</strong>
+                      <strong>黑松沙士PLUS強碳酸600ml</strong>
                     </td>
                     <td>
-                      <strong>免費送乙份</strong>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>黑松FIN補給飲料580ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>舒跑S補給飲料590ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>御茶園台灣金萱550ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>舒跑鹼性離子水850ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>味丹心茶道冬瓜茶560ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>OOHA氣泡飲-檸檬蜂蜜500ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>美粒果零加糖蘋果蘇打500ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>美粒果零加糖葡萄蘇打500ml</strong>
+                    </td>
+                    <td>
+                      <strong>免費送乙瓶</strong>
                     </td>
                   </tr>
                 </tbody>
@@ -402,9 +358,7 @@ const Rule = () => {
                   marginTop: 15,
                 }}
               >
-                ※以下品項不參與本次活動：
-                <br />
-                待補充
+                以下品項不參與本次活動：待提供
               </p>
             </div>
 
@@ -448,9 +402,6 @@ const Rule = () => {
                 </li>
                 <li>
                   每條碼限使用一次(折價一組)，使用過後條碼立即失效，不得再為使用。
-                </li>
-                <li>
-                  本活動折扣條碼經刷讀使用後失效，如商品需退換貨，後續結帳無法使用該筆優惠條碼。
                 </li>
                 <li>
                   詳細活動辦法依本公司公告為準。凡參與本活動，即視同接受本活動注意事項及相關規定，本公司保有隨時修正、暫停或終止本活動之權利，若有未盡事宜，悉依本公司之相關公告辦理；本公司保留最終解釋及決定權利。

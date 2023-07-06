@@ -54,7 +54,7 @@ const List: React.FC<Props> = ({ records = [], viewPrize, isFetching }) => {
           return record.redeemTime;
         }
         case "expired": {
-          return record.expired;
+          return record.expired && !record.redeemTime;
         }
         case "convertible":
           return !record.expired && !record.redeemTime;

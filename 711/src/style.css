@@ -200,7 +200,7 @@ body {
   -webkit-text-size-adjust: none;
   font-family: "微軟正黑體", "新細明體", "蘋果儷黑體", Arial, Helvetica,
     sans-serif;
-  background: url("~/assets/images/bg.png") #fff;
+  background-color: #ffd800;
   background-size: cover;
   color: #6c341b;
   background-repeat: no-repeat;
@@ -389,18 +389,18 @@ h2 {
   border-radius: 50px;
 }
 p {
-  color: #014178;
+  color: #991414;
   text-align: center;
   margin-bottom: 0.4em;
   line-height: 1.4em;
 }
 p span {
-  color: #fc4515;
+  color: #e3007f;
   font-size: 1.2em;
   font-weight: bold;
 }
 p span.note {
-  color: #ff8736;
+  color: #e3007f;
   font-size: 16px;
   font-weight: bold;
 }
@@ -428,7 +428,7 @@ p.notice {
   margin: 0 auto;
   width: 30px;
   height: 2px;
-  background-color: #ffde00;
+  background-color: #fff;
 }
 .navToggle .icon:before,
 .navToggle .icon:after {
@@ -436,7 +436,7 @@ p.notice {
   position: absolute;
   width: 30px;
   height: 2px;
-  background-color: #ffde00;
+  background-color: #fff;
   content: "";
 }
 .navToggle .icon:before {
@@ -448,15 +448,15 @@ p.notice {
   left: 0;
 }
 .navToggle:hover .icon {
-  background-color: #ffde00;
+  background-color: #fff;
 }
 .navToggle:hover .icon:before {
   top: -10px;
-  background-color: #ffde00;
+  background-color: #fff;
 }
 .navToggle:hover .icon:after {
   top: 10px;
-  background-color: #ffde00;
+  background-color: #fff;
 }
 .navToggle.open .icon {
   -webkit-transition: all 0.4s ease-out;
@@ -541,21 +541,30 @@ p.notice {
 }
 
 /* kv */
+.bg-idx {
+  width: 122%;
+  background-image: url("~/assets/images/bg-idx.png");
+  padding-top: 122%;
+  position: absolute;
+  background-size: cover;
+  right: -11%;
+}
 .title-idx {
   width: 100%;
-  padding-top: 32%;
+  padding-top: 120%;
   background-image: url("~/assets/images/title-idx.png");
   background-repeat: no-repeat;
-  background-position: center;
-  -webkit-background-size: contain;
+  background-position: bottom;
+  -webkit-background-size: cover;
   background-size: contain;
   animation: bounce-in 1s ease forwards;
   opacity: 0;
   position: relative;
+  margin: 10% auto 0 auto;
 }
 .title-idx .title-pic1,
 .title-idx .title-pic2 {
-  width: 25%;
+  width: 100%;
   position: absolute;
   bottom: 20px;
   transform-origin: bottom;
@@ -656,7 +665,7 @@ p.notice {
 }
 .btn.btn-style1 {
   color: #fff;
-  background: #e96467;
+  background: #e84393;
   flex-direction: column;
   box-shadow: 1px 1px 5px 0px #999999;
 }
@@ -671,10 +680,10 @@ p.notice {
 }
 .btn.btn-style2 {
   color: #000;
-  background: #ffcb79;
+  background: #fff;
   flex-direction: column;
   font-size: 1.3rem;
-  font-weight: lighter;
+  font-weight: bolder;
   box-shadow: 1px 1px 5px 0px #999999;
 }
 
@@ -689,12 +698,9 @@ p.notice {
 .idx_info {
   width: 100%;
   text-align: center;
-  background: url("~/assets/images/idxbg.png");
-  background-size: cover;
   margin-top: 2%;
   z-index: 99;
   padding: 8%;
-  position: fixed;
   bottom: 0;
 }
 .idx-text_box {
@@ -750,6 +756,10 @@ p.notice {
 .prize-box {
   width: 82%;
   margin: 0 auto;
+}
+.prize-box img {
+  border-radius: 10px;
+  border: 2px solid #fff;
 }
 .prize .btn-box {
   margin: 20px 0 20px;
@@ -872,7 +882,7 @@ p.notice {
   font-size: 20px;
   font-weight: bold;
   margin: 0 auto 10px auto;
-  color: #0055a7;
+  color: #f5821f;
   text-align: center;
   position: relative;
   line-height: 1.4;
@@ -903,7 +913,7 @@ p.notice {
   font-size: 18px;
   font-weight: bold;
   margin: 10px auto;
-  color: #58ba85;
+  color: #e84393;
 }
 .rule-content h4:before,
 .rule-content h4:after {
@@ -949,7 +959,7 @@ table td {
 }
 table .th-1 {
   width: 50%;
-  background-color: #0055a7;
+  background-color: #f5821f;
 }
 table .th-2 {
   width: 50%;
